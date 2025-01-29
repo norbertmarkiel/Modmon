@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modmon.Bootstraper", "src\Bootstraper\Modmon.Bootstraper\Modmon.Bootstraper.csproj", "{87AB06CD-2767-444B-8E56-A1C84EC5D1D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D7D0CF75-04C7-4753-86AA-F97958DE06DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{47D30682-1CE6-4F3A-95C1-ACEEA567E22B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstraper", "Bootstraper", "{166D4D74-198A-4B3B-9AE7-2C97C2C01F50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{763EEEBC-A0F8-4A66-9FAA-0E15B26534DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{D2D2FDD3-341A-4572-A85A-30998D72C6B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modmon.Shared.Abstractions", "src\Shared\Modmon.Shared.Abstractions\Modmon.Shared.Abstractions.csproj", "{B1540500-96EF-4C60-A558-E53C20C54FE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modmon.Shared.Infrastructure", "src\Shared\Modmon.Shared.Infrastructure\Modmon.Shared.Infrastructure.csproj", "{2BB6CA06-F179-4CB3-93B1-1EB817FAD6ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87AB06CD-2767-444B-8E56-A1C84EC5D1D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87AB06CD-2767-444B-8E56-A1C84EC5D1D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87AB06CD-2767-444B-8E56-A1C84EC5D1D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87AB06CD-2767-444B-8E56-A1C84EC5D1D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1540500-96EF-4C60-A558-E53C20C54FE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1540500-96EF-4C60-A558-E53C20C54FE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1540500-96EF-4C60-A558-E53C20C54FE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1540500-96EF-4C60-A558-E53C20C54FE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BB6CA06-F179-4CB3-93B1-1EB817FAD6ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB6CA06-F179-4CB3-93B1-1EB817FAD6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB6CA06-F179-4CB3-93B1-1EB817FAD6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB6CA06-F179-4CB3-93B1-1EB817FAD6ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{87AB06CD-2767-444B-8E56-A1C84EC5D1D5} = {166D4D74-198A-4B3B-9AE7-2C97C2C01F50}
+		{166D4D74-198A-4B3B-9AE7-2C97C2C01F50} = {D7D0CF75-04C7-4753-86AA-F97958DE06DE}
+		{763EEEBC-A0F8-4A66-9FAA-0E15B26534DE} = {D7D0CF75-04C7-4753-86AA-F97958DE06DE}
+		{D2D2FDD3-341A-4572-A85A-30998D72C6B0} = {D7D0CF75-04C7-4753-86AA-F97958DE06DE}
+		{B1540500-96EF-4C60-A558-E53C20C54FE2} = {D2D2FDD3-341A-4572-A85A-30998D72C6B0}
+		{2BB6CA06-F179-4CB3-93B1-1EB817FAD6ED} = {D2D2FDD3-341A-4572-A85A-30998D72C6B0}
+	EndGlobalSection
+EndGlobal

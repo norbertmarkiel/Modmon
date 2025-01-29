@@ -1,0 +1,7 @@
+.vs/
+src/Bootstraper/Modmon.Bootstraper/bin/
+src/Bootstraper/Modmon.Bootstraper/obj/
+src/Shared/Modmon.Shared.Abstractions/obj/
+src/Shared/Modmon.Shared.Infrastructure/bin/
+src/Shared/Modmon.Shared.Infrastructure/obj/
+src/Shared/Modmon.Shared.Abstractions/bin/
