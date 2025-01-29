@@ -1,0 +1,45 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Controllers;
+using System.Reflection;
+
+namespace Modmon.Shared.Infrastructure.Api
+{
+    /// <summary>
+    /// For loading internal controllers from modules
+    /// </summary>
+    internal class InternalControllerFeatureProvider : ControllerFeatureProvider
+    {
+
+        protected override bool IsController(TypeInfo typeInfo)
+        {
+            if (!typeInfo.IsClass)
+            {
+                return false;
+            }
+
+            if (typeInfo.IsAbstract)
+            {
+                return false;
+            }
+
+
+            if (typeInfo.ContainsGenericParameters)
+            {
+                return false;
+            }
+
+            if (typeInfo.IsDefined(typeof(NonControllerAttribute)))
+            {
+                return false;
+            }
+
+            if (!typeInfo.Name.EndsWith("Controller", StringComparison.OrdinalIgnoreCase) &&
+                !typeInfo.IsDefined(typeof(ControllerAttribute)))
+            {
+                return false;
+            }
+
+            return true;
+        }
+    }
+}

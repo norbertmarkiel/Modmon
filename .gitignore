@@ -5,3 +5,7 @@ src/Shared/Modmon.Shared.Abstractions/obj/
 src/Shared/Modmon.Shared.Infrastructure/bin/
 src/Shared/Modmon.Shared.Infrastructure/obj/
 src/Shared/Modmon.Shared.Abstractions/bin/
+src/Modules/Conferences/Modmon.Modules.Conferences.Api/obj/
+src/Modules/Conferences/Modmon.Modules.Conferences.Api/bin/
+src/Modules/Conferences/Modmon.Modules.Conferences.Core/obj/
+src/Modules/Conferences/Modmon.Modules.Conferences.Core/bin/

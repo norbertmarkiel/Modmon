@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Modules\Conferences\Modmon.Modules.Conferences.Api\Modmon.Modules.Conferences.Api.csproj" />
     <ProjectReference Include="..\..\Shared\Modmon.Shared.Infrastructure\Modmon.Shared.Infrastructure.csproj" />
   </ItemGroup>
 
