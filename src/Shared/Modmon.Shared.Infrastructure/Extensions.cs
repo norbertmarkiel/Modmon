@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Modmon.Shared.Abstractions;
 using Modmon.Shared.Infrastructure.Api;
+using Modmon.Shared.Infrastructure.Time;
 using System.Runtime.CompilerServices;
 
 
@@ -12,6 +14,8 @@ namespace Modmon.Shared.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
+
+            services.AddSingleton<IClock, Clock>();
             services.AddControllers()
                 .ConfigureApplicationPartManager(manager => //For loading internal controllers from modules
                 { 

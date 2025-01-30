@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\Modmon.Shared.Abstractions\Modmon.Shared.Abstractions.csproj" />
     <ProjectReference Include="..\..\..\Shared\Modmon.Shared.Infrastructure\Modmon.Shared.Infrastructure.csproj" />
   </ItemGroup>
