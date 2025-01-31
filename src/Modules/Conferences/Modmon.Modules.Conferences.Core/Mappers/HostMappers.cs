@@ -31,7 +31,7 @@ namespace Modmon.Modules.Conferences.Core.Mappers
                 Id = entity.Id,
                 Name = entity.Name,
                 Description = entity.Description,
-                Conferences = entity.Conferences.Select(entityConference => new ConferencesDto()).ToList(),
+                Conferences = entity.Conferences.Select(entityConference => new ConferenceDto()).ToList(),
             };
         }
     }
