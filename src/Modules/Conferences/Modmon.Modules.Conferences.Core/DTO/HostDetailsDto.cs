@@ -2,6 +2,6 @@
 {
     public class HostDetailsDto : HostDto
     {
-        public List<ConferencesDto> Conferences { get; set; }
+        public List<ConferenceDto> Conferences { get; set; }
     }
 }

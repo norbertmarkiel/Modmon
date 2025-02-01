@@ -6,8 +6,5 @@
         public string Name { get; set; }
         public string Description { get; set; }
     }
-    public class HostDetailsDto : HostDto
-    {
-        public List<ConferencesDto> Conferences { get; set; }
-    }
+
 }

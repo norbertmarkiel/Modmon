@@ -1,24 +1,23 @@
 ﻿using Modmon.Modules.Conferences.Core.DTO;
 using Modmon.Modules.Conferences.Core.Entities;
 using Modmon.Modules.Conferences.Core.Exceptions;
+using Modmon.Modules.Conferences.Core.Policies;
 using Modmon.Modules.Conferences.Core.Repositories;
 
 namespace Modmon.Modules.Conferences.Core.Services
 {
     internal class ConferencesService : IConferencesService
     {
-        private readonly IConferenceRepository _conferenceRepository;
+        private readonly IConferencesRepository _conferenceRepository;
         private readonly IHostRepository _hostRepository;
-        private readonly IConferenceDeletionPolicy _conferenceDeletionPolicy;
-        private readonly IMessageBroker _messageBroker;
+        private readonly IConferencesDeletionPolicy _conferenceDeletionPolicy;
 
-        public ConferenceService(IConferenceRepository conferenceRepository, IHostRepository hostRepository,
-            IConferenceDeletionPolicy conferenceDeletionPolicy, IMessageBroker messageBroker)
+        public ConferencesService(IConferencesRepository conferenceRepository, IHostRepository hostRepository,
+            IConferencesDeletionPolicy conferenceDeletionPolicy)
         {
             _conferenceRepository = conferenceRepository;
             _hostRepository = hostRepository;
             _conferenceDeletionPolicy = conferenceDeletionPolicy;
-            _messageBroker = messageBroker;
         }
 
         public async Task AddAsync(ConferenceDetailsDto dto)
@@ -43,8 +42,6 @@ namespace Modmon.Modules.Conferences.Core.Services
             };
 
             await _conferenceRepository.AddAsync(conference);
-            await _messageBroker.PublishAsync(new ConferenceCreated(conference.Id, conference.Name,
-                conference.ParticipantsLimit, conference.From, conference.To));
         }
 
         public async Task<ConferenceDetailsDto> GetAsync(Guid id)
@@ -96,7 +93,7 @@ namespace Modmon.Modules.Conferences.Core.Services
 
             if (await _conferenceDeletionPolicy.CanDeleteAsync(conference) is false)
             {
-                throw new CannotDeleteHConferenceException(id);
+                throw new CannotDeleteConferenceException(id);
             }
 
             await _conferenceRepository.DeleteAsync(conference);
