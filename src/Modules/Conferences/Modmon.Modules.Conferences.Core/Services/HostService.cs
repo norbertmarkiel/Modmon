@@ -8,10 +8,10 @@ namespace Modmon.Modules.Conferences.Core.Services
 {
     internal class HostService : IHostService
     {
-        private readonly IHostRepository _hostRepository;
+        private readonly IHostsRepository _hostRepository;
         private readonly IHostDeletePolicy _hostDeletePolicy;
 
-        public HostService(IHostRepository hostRepository,
+        public HostService(IHostsRepository hostRepository,
             IHostDeletePolicy hostDeletePolicy)
         {
             _hostRepository = hostRepository;

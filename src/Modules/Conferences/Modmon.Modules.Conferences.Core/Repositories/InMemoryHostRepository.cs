@@ -2,7 +2,7 @@
 
 namespace Modmon.Modules.Conferences.Core.Repositories
 {
-    internal class InMemoryHostRepository : IHostRepository
+    internal class InMemoryHostRepository : IHostsRepository
     {
         //Not thread-safe
         private readonly List<Host> _hosts = new();

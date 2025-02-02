@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Modules\Conferences\Modmon.Modules.Conferences.Api\Modmon.Modules.Conferences.Api.csproj" />
     <ProjectReference Include="..\..\Shared\Modmon.Shared.Infrastructure\Modmon.Shared.Infrastructure.csproj" />
   </ItemGroup>

@@ -3,7 +3,7 @@ using Modmon.Modules.Conferences.Core.Entities;
 
 namespace Modmon.Modules.Conferences.Core.Repositories
 {
-    internal interface IHostRepository
+    internal interface IHostsRepository
     {
         Task<Host?> GetAsync(Guid id);
         Task<IReadOnlyList<Host>> BrowseAsync();

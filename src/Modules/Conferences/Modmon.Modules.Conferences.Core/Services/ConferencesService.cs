@@ -9,10 +9,10 @@ namespace Modmon.Modules.Conferences.Core.Services
     internal class ConferencesService : IConferencesService
     {
         private readonly IConferencesRepository _conferenceRepository;
-        private readonly IHostRepository _hostRepository;
+        private readonly IHostsRepository _hostRepository;
         private readonly IConferencesDeletionPolicy _conferenceDeletionPolicy;
 
-        public ConferencesService(IConferencesRepository conferenceRepository, IHostRepository hostRepository,
+        public ConferencesService(IConferencesRepository conferenceRepository, IHostsRepository hostRepository,
             IConferencesDeletionPolicy conferenceDeletionPolicy)
         {
             _conferenceRepository = conferenceRepository;
