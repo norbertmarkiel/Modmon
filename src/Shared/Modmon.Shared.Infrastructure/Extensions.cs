@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Modmon.Shared.Abstractions;
+using Modmon.Shared.Abstractions.Modules;
 using Modmon.Shared.Infrastructure.Api;
 using Modmon.Shared.Infrastructure.Exceptions;
 using Modmon.Shared.Infrastructure.Services;
@@ -15,8 +17,15 @@ namespace Modmon.Shared.Infrastructure
 {
     internal static class Extensions
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IList<IModule> _modules)
         {
+
+
+            foreach (var item in _modules)
+            {
+                item.Register(services);
+            }
+
             services.AddErrorHandling();
             services.AddSingleton<IClock, Clock>();
             services.AddHostedService<AppInitializer>();
@@ -29,11 +38,20 @@ namespace Modmon.Shared.Infrastructure
             return services;
         }
 
-        public static IApplicationBuilder UseInfrastructure(this IApplicationBuilder app)
+        public static IApplicationBuilder UseInfrastructure(this IApplicationBuilder app, IList<IModule> _modules)
         {
             app.UseErrorHandling(); // It's important to add ExceptionHandler as first using. The order of Use in ApplicationBuilder matters.
 
             app.UseRouting();
+
+
+            foreach (var item in _modules)
+            {
+                item.Use(app);
+            }
+            
+            //TODO log installed modules
+            
 
             app.UseEndpoints(endpoints =>
             {

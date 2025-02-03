@@ -2,7 +2,7 @@
 
 namespace Modmon.Modules.Conferences.Api.Controllers
 {
-    [Route(BasePath)]
+    [Route(ConferencesModule.BasePath)]
     internal  class HomeController : BaseController
     {
         [HttpGet]
