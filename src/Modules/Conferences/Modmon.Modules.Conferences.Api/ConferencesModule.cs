@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Modmon.Modules.Conferences.Core;
 using Modmon.Shared.Abstractions.Modules;
 
 namespace Modmon.Modules.Conferences.Api
@@ -12,7 +13,7 @@ namespace Modmon.Modules.Conferences.Api
 
         public void Register(IServiceCollection services)
         {
-            services.AddConferences();
+            services.AddCore();
         }
 
         public void Use(IApplicationBuilder app)
