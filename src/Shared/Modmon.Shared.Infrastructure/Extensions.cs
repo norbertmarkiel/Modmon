@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -9,6 +10,7 @@ using Modmon.Shared.Infrastructure.Api;
 using Modmon.Shared.Infrastructure.Exceptions;
 using Modmon.Shared.Infrastructure.Services;
 using Modmon.Shared.Infrastructure.Time;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 
 
@@ -17,8 +19,21 @@ namespace Modmon.Shared.Infrastructure
 {
     internal static class Extensions
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IList<IModule> _modules)
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IList<Assembly> _assemblies, IList<IModule> _modules)
         {
+            var disabledModules = new List<string>();
+            using (var serviceProvider = services.BuildServiceProvider())
+            {
+                var configuration = serviceProvider.GetRequiredService<IConfiguration>();
+                foreach (var (key, value) in configuration.AsEnumerable())
+                {
+                    if (!key.Contains(":module:enabled"))
+                        continue;
+
+                    if (!bool.Parse(value))
+                        disabledModules.Add(key.Split(":")[0]);
+                }
+            }
 
 
             foreach (var item in _modules)
@@ -31,9 +46,20 @@ namespace Modmon.Shared.Infrastructure
             services.AddHostedService<AppInitializer>();
             services.AddControllers()
                 .ConfigureApplicationPartManager(manager => //For loading internal controllers from modules
-                { 
-                manager.FeatureProviders.Add(new InternalControllerFeatureProvider());
-                }); 
+                {
+                    var removedParts = new List<ApplicationPart>();
+                    foreach (var disabledModule in disabledModules)
+                    {
+                        var parts = manager.ApplicationParts.Where(x => x.Name.Contains(disabledModule, StringComparison.InvariantCultureIgnoreCase));
+                        removedParts.AddRange(parts);
+
+                        foreach (var part in removedParts)
+                        {
+                            manager.ApplicationParts.Remove(part); //remove disabled modules
+                        }
+                    }
+                    manager.FeatureProviders.Add(new InternalControllerFeatureProvider());
+                });
 
             return services;
         }
@@ -49,9 +75,9 @@ namespace Modmon.Shared.Infrastructure
             {
                 item.Use(app);
             }
-            
+
             //TODO log installed modules
-            
+
 
             app.UseEndpoints(endpoints =>
             {

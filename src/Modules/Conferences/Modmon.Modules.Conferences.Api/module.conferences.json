@@ -1,0 +1,8 @@
+{
+  "conferences": { //Root should be unique module name (to prevent overwrite)
+    "module": {
+      "name": "Conferences",
+      "enabled": true
+    }
+  }
+}

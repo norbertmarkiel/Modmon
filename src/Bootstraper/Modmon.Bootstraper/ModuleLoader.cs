@@ -5,8 +5,10 @@ namespace Modmon.Bootstraper
 {
     internal static class ModuleLoader
     {
-        public static IList<Assembly> LoadAssemblies()
+        public static IList<Assembly> LoadAssemblies(IConfiguration configuration)
         {
+            const string modulesPath = "Modmon.Modules."; //Required convention
+
             var assemblies = AppDomain.CurrentDomain.GetAssemblies().ToList();
             var locations = assemblies.Where(x => !x.IsDynamic)
                                 .Select(x => x.Location)
@@ -15,6 +17,19 @@ namespace Modmon.Bootstraper
             var files = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.dll")
                     .Where(x => !locations.Contains(x, StringComparer.InvariantCultureIgnoreCase))
                     .ToList();
+
+            var disabledModules = new List<string>();
+            foreach (var item in files)
+            {
+                if (!item.Contains(modulesPath))
+                    continue;
+
+                var moduleName = item.Split(modulesPath)[1].Split('.')[0].ToLowerInvariant();
+                var enabled = configuration.GetValue<bool>($"{moduleName}:module:enabled");
+                if (!enabled)
+                    disabledModules.Add(item);
+            }
+
 
             files.ForEach(x => assemblies.Add(AppDomain.CurrentDomain.Load(AssemblyName.GetAssemblyName(x))));
 
