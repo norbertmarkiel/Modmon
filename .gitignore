@@ -9,3 +9,7 @@ src/Modules/Conferences/Modmon.Modules.Conferences.Api/obj/
 src/Modules/Conferences/Modmon.Modules.Conferences.Api/bin/
 src/Modules/Conferences/Modmon.Modules.Conferences.Core/obj/
 src/Modules/Conferences/Modmon.Modules.Conferences.Core/bin/
+src/Modules/Speakers/Modmon.Modules.Speakers.Core/obj/
+src/Modules/Speakers/Modmon.Modules.Speakers.Api/bin/
+src/Modules/Speakers/Modmon.Modules.Speakers.Api/obj/
+src/Modules/Speakers/Modmon.Modules.Speakers.Core/bin/

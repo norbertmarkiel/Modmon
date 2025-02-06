@@ -25,6 +25,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modmon.Modules.Conferences.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modmon.Modules.Conferences.Core", "src\Modules\Conferences\Modmon.Modules.Conferences.Core\Modmon.Modules.Conferences.Core.csproj", "{7727B720-1F3A-465E-B977-0637CF202C9E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2C394B68-029E-42A7-B30E-041BD7A0DB9E}"
+	ProjectSection(SolutionItems) = preProject
+		docs.md = docs.md
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Speakers", "Speakers", "{C0B65C44-0040-4F15-830B-45BFC5E3B525}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modmon.Modules.Speakers.Api", "src\Modules\Speakers\Modmon.Modules.Speakers.Api\Modmon.Modules.Speakers.Api.csproj", "{51958EFC-3CBE-4B86-99FD-0DF4E5587C5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modmon.Modules.Speakers.Core", "src\Modules\Speakers\Modmon.Modules.Speakers.Core\Modmon.Modules.Speakers.Core.csproj", "{E992F05D-7D84-4892-9348-0086C725E397}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +63,14 @@ Global
 		{7727B720-1F3A-465E-B977-0637CF202C9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7727B720-1F3A-465E-B977-0637CF202C9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7727B720-1F3A-465E-B977-0637CF202C9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51958EFC-3CBE-4B86-99FD-0DF4E5587C5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51958EFC-3CBE-4B86-99FD-0DF4E5587C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51958EFC-3CBE-4B86-99FD-0DF4E5587C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51958EFC-3CBE-4B86-99FD-0DF4E5587C5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E992F05D-7D84-4892-9348-0086C725E397}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E992F05D-7D84-4892-9348-0086C725E397}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E992F05D-7D84-4892-9348-0086C725E397}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E992F05D-7D84-4892-9348-0086C725E397}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,5 +85,8 @@ Global
 		{9DD835F5-2130-402C-AA85-9909BAB4F388} = {763EEEBC-A0F8-4A66-9FAA-0E15B26534DE}
 		{6B9BCD8D-291C-4459-A289-B1004E7F8371} = {9DD835F5-2130-402C-AA85-9909BAB4F388}
 		{7727B720-1F3A-465E-B977-0637CF202C9E} = {9DD835F5-2130-402C-AA85-9909BAB4F388}
+		{C0B65C44-0040-4F15-830B-45BFC5E3B525} = {763EEEBC-A0F8-4A66-9FAA-0E15B26534DE}
+		{51958EFC-3CBE-4B86-99FD-0DF4E5587C5B} = {C0B65C44-0040-4F15-830B-45BFC5E3B525}
+		{E992F05D-7D84-4892-9348-0086C725E397} = {C0B65C44-0040-4F15-830B-45BFC5E3B525}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,8 @@
+{
+  "speakers": { //Root should be unique module name (to prevent overwrite)
+    "module": {
+      "name": "Speakers",
+      "enabled": true
+    }
+  }
+}

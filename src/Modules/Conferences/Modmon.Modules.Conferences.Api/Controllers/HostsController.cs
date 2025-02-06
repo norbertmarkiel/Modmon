@@ -5,7 +5,7 @@ using Modmon.Modules.Conferences.Core.Services;
 
 namespace Modmon.Modules.Conferences.Api.Controllers
 {
-    internal  class HostsController : BaseController
+    internal class HostsController : BaseController
     {
 
         private readonly IHostService _hostService;

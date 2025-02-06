@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Modules\Conferences\Modmon.Modules.Conferences.Api\Modmon.Modules.Conferences.Api.csproj" />
+    <ProjectReference Include="..\..\Modules\Speakers\Modmon.Modules.Speakers.Api\Modmon.Modules.Speakers.Api.csproj" />
     <ProjectReference Include="..\..\Shared\Modmon.Shared.Infrastructure\Modmon.Shared.Infrastructure.csproj" />
   </ItemGroup>
 
