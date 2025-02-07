@@ -67,9 +67,9 @@ namespace Modmon.Shared.Infrastructure
         public static IApplicationBuilder UseInfrastructure(this IApplicationBuilder app, IList<IModule> _modules)
         {
             app.UseErrorHandling(); // It's important to add ExceptionHandler as first using. The order of Use in ApplicationBuilder matters.
-
+            app.UseAuthentication();
             app.UseRouting();
-
+            app.UseAuthorization();
 
             foreach (var item in _modules)
             {

@@ -7,6 +7,7 @@ namespace Modmon.Shared.Abstractions.Modules
     {
         string Name { get; }
         string Path { get; }
+        IEnumerable<string> Policies => null;
         void Register(IServiceCollection sercices);
         void Use(IApplicationBuilder app);
     }

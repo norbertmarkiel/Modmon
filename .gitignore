@@ -13,3 +13,5 @@ src/Modules/Speakers/Modmon.Modules.Speakers.Core/obj/
 src/Modules/Speakers/Modmon.Modules.Speakers.Api/bin/
 src/Modules/Speakers/Modmon.Modules.Speakers.Api/obj/
 src/Modules/Speakers/Modmon.Modules.Speakers.Core/bin/
+src/Modules/Users/Modmon.Modules.Users.Api/obj/
+src/Modules/Users/Modmon.Modules.Users.Core/obj/
