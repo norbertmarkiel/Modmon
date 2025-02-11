@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Modmon.Shared.Abstractions;
 using Modmon.Shared.Abstractions.Modules;
 using Modmon.Shared.Infrastructure.Api;
